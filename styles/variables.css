@@ -2,10 +2,19 @@
   Переменные для вашего проекта
   и их переопределение под различные устройства
 */
+
 :root {
   --main-color: #F1B2CE;
   --accent-color: #FF0070;
   --decor-color: #000028;
-  
+  --focus-color: #DB00FF;
+  --mobile-gap: 10px;
 }
  
+
+@media (width >= 768px) {
+  
+  :root {
+    --mobile-gap: 20px;
+  }
+}

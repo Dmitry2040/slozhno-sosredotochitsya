@@ -7,13 +7,12 @@
   justify-items: end;
   align-items: center;
   gap: 5px;
-  padding: 10px;
+  padding: var(--mobile-gap);
 }
 
 .decorated-zone {
   color: var(--accent-color);
   position: relative;
-  
 }
 
 .header::before, footer::before {
@@ -25,8 +24,6 @@
   border-inline-end: 1px solid var(--accent-color);
   margin-inline-start: auto;
   margin-block-end: auto;
-  
-    
 }
 
 .header::after, footer::after {
@@ -38,8 +35,6 @@
   border-inline-start: 1px solid var(--accent-color);
   margin-inline-end: auto;
   margin-block-start: auto;
-
-  
 }
 
 
@@ -47,7 +42,7 @@
   font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
   display: grid;
   text-shadow: 4px 4px 0 var(--accent-color);
-  color: #DB00FF;
+  color: var(--focus-color);
   line-height: 95.7px;
   margin-block-end: 23px;
   margin-block-start: 61px;
@@ -56,11 +51,9 @@
 
 
 .header__theme-menu-list {
-
  display: grid;
  align-items: end;
  gap: 10px;
- right: 10px;
  margin-block-start: 35px;
  
 }
@@ -98,32 +91,26 @@
  box-shadow: 0 0 4px 4px var(--accent-color);
  margin-block-end: 3px;
  margin-inline-start: 9px;
- 
 }
 
 
 .page {
-  
-  /* сохраните в разметке и стилях класс page. На его основе работает скрипт. */
   background-image: url(../images/cover-image-dark.png);
   background-attachment: fixed;
   background-position: center ;
   background-size: cover;
-    
 }
 
 .title-decor {
   font-weight: 700;
   color: var(--decor-color);
   background-color: var(--accent-color);
-  
- 
 }
 
 .section {
   color: var(--main-color);
-  margin: 40px 10px 0;
-  padding-block-end: 10px;
+  margin: 40px var(--mobile-gap) 0;
+  padding-block-end: var(--mobile-gap);
   display: grid;
   gap: 20px;
 }
@@ -136,10 +123,6 @@
   margin-block-end: 10px;
 }
 
-.card_text {
-
-}
-
 .section_title {
   font-size: 18px;
   font-weight: 700;
@@ -148,6 +131,10 @@
 
 .subtitle {
   margin-block-end: 0;
+}
+
+.accent_text {
+  text-shadow: 2px 2px 0 var(--accent-color);
 }
 
 .section_how .card_title {
@@ -160,7 +147,7 @@
 
 .section_gallery {
   display: grid;
-  gap: 10px;;
+  gap: var(--mobile-gap);
 }
 
 .gallery_item {
@@ -178,13 +165,10 @@
   min-height: 668px;
   display: grid;
   margin-block-start: 30px;
-  padding: 10px;
- 
-  
+  padding: var(--mobile-gap);
 }
 
 .footer_title {
-  
   text-shadow: 2px 2px 0 var(--accent-color);
   align-self: center;
   justify-self: center;
@@ -207,27 +191,22 @@
   .header {
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: 1fr min-content 1fr;
-    padding: 20px;
-
   }
 
   .header_title {
-    
     display: grid;
     grid-row-start: 2;
     justify-self: start;
     grid-column-start: 1;
     grid-column-end: 4;
-   
   }
 
-  .one {
+  .first_word {
     grid-column-start: span 1;
     margin-inline-start: -20px;
-    
   }
 
-  .two {
+  .second_word {
     justify-content: end;;
     grid-column-start: 2;
     grid-column-end: 4;
@@ -239,19 +218,15 @@
     grid-column-end: 5;
     grid-row-start: 3;
     margin-block-end: 30px;
-    
   }
 
   .header__theme-menu {
     grid-column-start: 4;
     grid-row-start: 1;
-
   }
 
   .footer {
-    padding: 20px;
     margin-block-start: 40px ;
-    
   }
 
   .footer_title {
@@ -275,15 +250,11 @@
   
   .section {
     margin: 60px 20px 0;
-    padding-block-end: 20px;
-   
-   
   }
 
   .section_why {
     grid-template-columns: repeat(3,1fr);
     grid-template-rows: 1fr 1fr;
-   
   }
 
   .section_why .card {
@@ -298,12 +269,10 @@
 
   .section_what .card {
     grid-column: 1 / 4;
-    
   }
 
   .section_how {
     grid-template-columns: repeat(3,1fr);
-    
   }
 
   .section_how .section_title {
@@ -316,7 +285,6 @@
   }
 
   .section_gallery {
-    gap: 20px;
     grid-template-rows: 1fr auto-fill 230px auto-fill;
     grid-template-columns: auto-fill 230px auto-fill;
   }
@@ -348,4 +316,46 @@
     grid-column: 2 / 4;
   }
 
+}
+
+@media (width >= 1024px) {
+
+  .heading {
+    line-height: 129.5px;
+    margin-block-start: 23px;
+  }
+
+  .second_word {
+    margin-inline-start: 94px;
+  }
+
+  .header__theme-menu {
+    grid-column: 2 / 4;
+    grid-row: 1 / 2;
+    justify-self: center;
+    align-self: start;
+  }
+
+  .header__theme-menu-list {
+    margin-block-start: 0;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .section_why .card {
+    padding-inline-start: 0;
+  }
+
+  .section_what .card {
+    grid-row: 2 / 4;
+    grid-column: span 1;
+  }
+
+  .section_how .card, .subtitle {
+    margin-inline-start: 0;
+  }
+
+  .footer_title {
+    margin-block-end: 23px;
+  }
 }
