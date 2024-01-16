@@ -55,9 +55,7 @@
  align-items: end;
  gap: 10px;
  margin-block-start: 35px;
- 
 }
-
 
 .header__theme-menu-button {
   inline-size: 70px;
@@ -67,11 +65,24 @@
   background-color: transparent;
   border: none;
   text-transform: lowercase;
+  cursor: pointer;
 }
 
 .header__theme-menu-button_active {
   pointer-events: none;
   border: 1px solid var(--accent-color);
+}
+
+.header__theme-menu-button:focus {
+  outline: none;
+}
+
+.header__theme-menu-button:hover{
+  border: 1px solid var(--accent-color)
+}
+
+.header__theme-menu-button:focus-visible {
+  border-bottom: 1px solid var(--accent-color);
 }
 
 .rec {
@@ -92,7 +103,6 @@
  margin-block-end: 3px;
  margin-inline-start: 9px;
 }
-
 
 .page {
   background-image: url(../images/cover-image-dark.png);
@@ -133,8 +143,22 @@
   margin-block-end: 0;
 }
 
-.accent_text {
+.accent_link {
   text-shadow: 2px 2px 0 var(--accent-color);
+  text-decoration: none;
+}
+
+.accent_link:focus {
+  outline: none;
+}
+
+.accent_link:focus-visible {
+  outline: 1px solid var(--main-color);
+  outline-offset: 1px ;
+}
+
+.accent_link:hover {
+  border-bottom: 1px solid var(--main-color);
 }
 
 .section_how .card_title {
@@ -264,7 +288,7 @@
   
   .section_what {
     grid-template-columns: repeat(3,1fr);
-    grid-template-rows: repeat( min-content, 4);
+    grid-template-rows: repeat(min-content, 4);
   }
 
   .section_what .card {
@@ -315,7 +339,6 @@
   .gallery_item_street {
     grid-column: 2 / 4;
   }
-
 }
 
 @media (width >= 1024px) {
