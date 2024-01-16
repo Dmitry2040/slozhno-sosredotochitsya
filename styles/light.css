@@ -21,10 +21,12 @@
     --accent-color: #FF8DCB;
     --decor-color: #353430;
     --focus-color: #FFC2E6;
+    --bgc: #FFF1F7;
   }
 
   .page {
     background-image: url(../images/cover-image-light.png);
+    background-color: var(--bgc);
   }
 
   .theme_auto .rec {
