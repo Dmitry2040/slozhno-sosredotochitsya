@@ -3,9 +3,10 @@
   --accent-color: #FF8DCB;
   --decor-color: #353430;
   --focus-color: #FFC2E6;
+  --bgc: #FFF1F7;
 }
 
-.page.theme_light  {
+.page.theme_light {
   background-image: url(../images/cover-image-light.png);
 }
 
