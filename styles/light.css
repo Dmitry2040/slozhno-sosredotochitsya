@@ -1,9 +1,11 @@
 :root .theme_light {
   --main-color: #353430;
   --accent-color: #FF8DCB;
+  --head-color: #353430;
   --decor-color: #353430;
   --focus-color: #FFC2E6;
   --bgc: #FFF1F7;
+  /* #FF8DCB; */
 }
 
 .page.theme_light {
@@ -19,6 +21,7 @@
   :root {
     --main-color: #353430;
     --accent-color: #FF8DCB;
+    --head-color:#353430;
     --decor-color: #353430;
     --focus-color: #FFC2E6;
     --bgc: #FFF1F7;
@@ -29,8 +32,11 @@
     background-color: var(--bgc);
   }
 
+
   .theme_auto .rec {
     display: none;
   }
+
+
    
 }

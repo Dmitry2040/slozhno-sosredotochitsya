@@ -1,9 +1,8 @@
-
 .header {
   height: 100vh;
   min-height: 668px;
   display: grid;
-  grid-template-rows: 25px min-content min-content 1fr 25px;
+  grid-template-rows: 25px auto auto 1fr 25px;
   justify-items: end;
   align-items: center;
   gap: 5px;
@@ -11,32 +10,31 @@
 }
 
 .decorated-zone {
-  color: var(--accent-color);
+  color: var(--head-color);
   position: relative;
 }
 
-.header::before, footer::before {
+.decorated-zone::before {
   content: "";
   display: block;
   width: 25px;
   height: 25px;
-  border-block-start: 1px solid var(--accent-color);
-  border-inline-end: 1px solid var(--accent-color);
+  border-block-start: 1px solid var(--head-color);
+  border-inline-end: 1px solid var(--head-color);
   margin-inline-start: auto;
   margin-block-end: auto;
 }
 
-.header::after, footer::after {
+.decorated-zone::after {
   content: "";
   display: block;
   width: 25px;
   height: 25px;
-  border-block-end: 1px solid var(--accent-color);
-  border-inline-start: 1px solid var(--accent-color);
+  border-block-end: 1px solid var(--head-color);
+  border-inline-start: 1px solid var(--head-color);
   margin-inline-end: auto;
   margin-block-start: auto;
 }
-
 
 .heading {
   font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
@@ -48,7 +46,6 @@
   margin-block-start: 61px;
   justify-self: start;
 }
-
 
 .header__theme-menu-list {
  display: grid;
@@ -66,11 +63,12 @@
   border: none;
   text-transform: lowercase;
   cursor: pointer;
+  padding-bottom: 3px;
 }
 
 .header__theme-menu-button_active {
   pointer-events: none;
-  border: 1px solid var(--accent-color);
+  border: 1px solid var(--head-color);
 }
 
 .header__theme-menu-button:focus {
@@ -78,11 +76,11 @@
 }
 
 .header__theme-menu-button:hover {
-  border: 1px solid var(--accent-color)
+  border: 1px solid var(--head-color)
 }
 
 .header__theme-menu-button:focus-visible {
-  border-bottom: 1px solid var(--accent-color);
+  border-bottom: 1px solid var(--head-color);
 }
 
 .rec {
@@ -100,8 +98,8 @@
  inline-size: 9px;
  block-size: 9px;
  box-shadow: 0 0 5px 3px var(--accent-color);
- margin-block-end: 3px;
- margin-inline-start: 9px;
+ margin-block-end: 2px;
+ margin-inline-start: 10px;
 }
 
 .page {
@@ -137,7 +135,7 @@
 .section_title {
   font-size: 18px;
   font-weight: 700;
-  color: var(--accent-color);
+  color: var(--head-color);
 }
 
 .subtitle {
@@ -189,6 +187,7 @@
   height: 100vh;
   min-height: 668px;
   display: grid;
+  grid-template-columns: 1fr;
   margin-block-start: 30px;
   padding: var(--mobile-gap);
 }
@@ -200,44 +199,26 @@
   margin-block-end: 59px;
 }
 
-
 @media (width >= 768px) {
 
   .header__theme-menu-list {
-    margin-block-start: 30px;
+    margin-block-start: 28px;
   }
 
   .heading {
+    grid-template-rows: 1fr;
+    grid-column-start:  span 4;
     font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem) ;
-    margin-block-start: 30px;
+    margin-block-start: 28px;
+    margin-inline-start: -20px;
     gap: 0;
   }
 
   .header {
     grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: 1fr min-content 1fr;
+    grid-template-rows: 1fr auto 1fr;
   }
 
-  .header_title {
-    display: grid;
-    grid-row-start: 2;
-    justify-self: start;
-    grid-column-start: 1;
-    grid-column-end: 4;
-  }
-
-  .first_word {
-    grid-column-start: span 1;
-    margin-inline-start: -20px;
-  }
-
-  .second_word {
-    justify-content: end;
-    grid-column-start: 2;
-    grid-column-end: 4;
-    margin-inline-start: 72px;
-  }
-   
   .title-decor {
     grid-column-start: 3;
     grid-column-end: 5;
@@ -255,7 +236,8 @@
   }
 
   .footer_title {
-    margin-block-end:  27px;
+    margin-block-end:  24px;
+    margin-inline-start: 0.5px;
   }
 
   .header::before {
@@ -270,7 +252,7 @@
 
   .rec {
     inset-inline-end: 30px;
-    inset-block-start: 23px;
+    inset-block-start: 21px;
   }
   
   .section {
@@ -289,7 +271,7 @@
   
   .section_what {
     grid-template-columns: repeat(3,1fr);
-    grid-template-rows: repeat(min-content, 4);
+    grid-template-rows: repeat(3, auto);
   }
 
   .section_what .card {
@@ -307,11 +289,6 @@
   .section_how .card, .subtitle {
     grid-column: 2 / 4;
     margin-inline-start: 8px;
-  }
-
-  .section_gallery {
-    grid-template-rows: 1fr auto-fill 230px auto-fill;
-    grid-template-columns: auto-fill 230px auto-fill;
   }
 
   .section_gallery_title {
@@ -347,10 +324,6 @@
   .heading {
     line-height: 129.5px;
     margin-block-start: 23px;
-  }
-
-  .second_word {
-    margin-inline-start: 94px;
   }
 
   .header__theme-menu {
