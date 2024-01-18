@@ -16,6 +16,11 @@
   display: none;
 }
 
+.theme_light .header__theme-menu-button:hover {
+  border: 1px solid rgba(50, 49, 45, 0.40);
+}
+
+
 @media (prefers-color-scheme: light) {
 
   :root {
@@ -32,6 +37,9 @@
     background-color: var(--bgc);
   }
 
+  .theme_auto .header__theme-menu-button:hover {
+    border: 1px solid rgba(50, 49, 45, 0.40);
+  }
 
   .theme_auto .rec {
     display: none;
