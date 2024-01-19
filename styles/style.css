@@ -76,7 +76,7 @@
 }
 
 .header__theme-menu-button:hover {
-  border: 1px solid rgba(255, 0, 112, 0.40);
+  border: 1px solid var(--hover-color);
 }
 
 .header__theme-menu-button:focus-visible {
